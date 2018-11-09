@@ -44,6 +44,7 @@ const images = {
   jsf: require('../src/assets/jsf.png'),
   proposal: require('../src/assets/proposal.png'),
   apistack: require('../src/assets/apistack.png'),
+  apipoc: require('../src/assets/apipoc.png'),
 };
 
 const theme = createTheme(
@@ -226,7 +227,48 @@ export default class Presentation extends React.Component {
                 <ListItem textSize="0.8em">Acceleration API: NN 底层 API，接近硬件优化，灵活适配 JS 框架 ⇒ 起点</ListItem>
               </Appear>
             </List>
-        </Slide>       
+        </Slide>
+
+        <Slide transition={['fade']} bgColor="secondary">
+          <Heading size={5} textColor="primary" caps>
+          Web Neural Network API POC
+          </Heading>
+
+          <List textColor="gray" margin="40px auto 0px">
+                <ListItem textSize="0.8em">从 <Link href='https://developer.android.com/ndk/guides/neuralnetworks/'>Android NN API</Link> 实现 <Link href='https://github.com/intel/webml-polyfill/blob/master/docs/api.md'>JavaScript API</Link> 的概念验证</ListItem>
+                <ListItem textSize="0.8em">作为 Web NN API 提案的起点，评估性能并探索跨平台能力</ListItem>
+            </List>
+            <Appear>
+            <Image src={images.apipoc.replace('/', '')} height="36vh" margin="40px auto 0px" />
+            </Appear>
+        </Slide>
+
+        <Slide transition={['fade']} bgColor="secondary">
+          <Heading size={5} textColor="primary" caps>
+          Web NN API POC 的实现
+          </Heading>
+         
+          <Image src={images.proposal.replace('/', '')} margin="40px auto 0px" height="46vh" />
+
+          <List textColor="gray">
+              <Appear>
+                <ListItem textSize="0.8em">WebAssembly 以及 WebGL 后端的 <Link href="https://github.com/intel/webml-polyfill">Polyfill</Link> 实现</ListItem>
+              </Appear>
+              <Appear>
+                <ListItem textSize="0.8em">Chromium prototype 实现</ListItem>
+              </Appear>
+              <Appear>
+                  <List>
+                    <ListItem textSize="0.65em" margin="0px 0px 0px 40px">Mac OS: MPS/BNNS API</ListItem>
+                    <ListItem textSize="0.65em" margin="0px 0px 0px 40px">Android: NN API</ListItem>
+                    <ListItem textSize="0.65em" margin="0px 0px 0px 40px">Windows/Linux: clDNN</ListItem>
+                    <ListItem textSize="0.65em" margin="0px 0px 0px 40px">Windows: DirectML API</ListItem>
+                  </List>
+              </Appear>
+
+            </List>
+        </Slide>
+
         <Slide
           onActive={slideIndex => {
             console.info(`Viewing slide index: ${slideIndex}.`); // eslint-disable-line no-console
