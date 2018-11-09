@@ -190,7 +190,7 @@ export default class Presentation extends React.Component {
           提议: Web Neural Network API
           </Heading>
          
-          <Image src={images.proposal.replace('/', '')} margin="40px auto 0px" height="70vh" />
+          <Image src={images.proposal.replace('/', '')} margin="40px auto 0px" height="46vh" />
 
           <List textColor="gray">
               <Appear>
@@ -213,17 +213,17 @@ export default class Presentation extends React.Component {
           机器学习/深度学习
           </Text>
          
-          <Image src={images.apistack.replace('/', '')} margin="40px auto 0px" height="70vh" />
+          <Image src={images.apistack.replace('/', '')} margin="40px auto 0px" height="46vh" />
 
           <List textColor="gray">
               <Appear>
-                <ListItem textSize="0.8em">Usage API：内置模型，易于集成⇒W3C形状检测API</ListItem>
+                <ListItem textSize="0.8em">Usage API: 内置模型，易于集成 ⇒ W3C 形状检测 API</ListItem>
               </Appear>
               <Appear>
-                <ListItem textSize="0.8em">Model API：模型预先训练，格式存在碎片化问题 ⇒ 未来的工作</ListItem>
+                <ListItem textSize="0.8em">Model API: 模型预先训练，格式存在碎片化问题 ⇒ 未来的工作</ListItem>
               </Appear>
               <Appear>
-                <ListItem textSize="0.8em">Acceleration API：神经网络底层 API，接近硬件优化，灵活适配 JS 框架 ⇒ 起点</ListItem>
+                <ListItem textSize="0.8em">Acceleration API: NN 底层 API，接近硬件优化，灵活适配 JS 框架 ⇒ 起点</ListItem>
               </Appear>
             </List>
         </Slide>       
