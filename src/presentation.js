@@ -45,6 +45,10 @@ const images = {
   proposal: require('../src/assets/proposal.png'),
   apistack: require('../src/assets/apistack.png'),
   apipoc: require('../src/assets/apipoc.png'),
+  perf1: require('../src/assets/perf1.png'),
+  perf2: require('../src/assets/perf2.png'),
+  cgqr: require('../src/assets/cgqr.png'),
+  nnspec: require('../src/assets/nnspec.png'),
 };
 
 const theme = createTheme(
@@ -90,6 +94,7 @@ export default class Presentation extends React.Component {
           2018.11.17
           </Text>
         </Slide>
+
         <Slide transition={['zoom', 'fade']} bgColor="secondary">
           <Heading caps fit textColor='primary' margin="0px 0 20px">
           JavaScript 机器学习/深度学习框架
@@ -164,10 +169,6 @@ export default class Presentation extends React.Component {
         </Slide>
 
         <Slide transition={['fade']} bgColor="secondary" bgImage={images.pg.replace('/', '')} bgRepeat='no-repeat' bgPosition='center' bgSize='100% 100%'
-          bgDarken={0.0}>   
-        </Slide>
-
-        <Slide transition={['fade']} bgColor="secondary" bgImage={images.pg2.replace('/', '')} bgRepeat='no-repeat' bgPosition='center' bgSize='100% 100%'
           bgDarken={0.85}>
           <Appear fid="1">
             <Heading margin={10} textSize="1.5em" textColor="#00aeef">
@@ -251,90 +252,163 @@ export default class Presentation extends React.Component {
           <Image src={images.proposal.replace('/', '')} margin="40px auto 0px" height="46vh" />
 
           <List textColor="gray">
-              <Appear>
                 <ListItem textSize="0.8em">WebAssembly 以及 WebGL 后端的 <Link href="https://github.com/intel/webml-polyfill">Polyfill</Link> 实现</ListItem>
-              </Appear>
-              <Appear>
                 <ListItem textSize="0.8em">Chromium prototype 实现</ListItem>
-              </Appear>
-              <Appear>
                   <List>
-                    <ListItem textSize="0.65em" margin="0px 0px 0px 40px">Mac OS: MPS/BNNS API</ListItem>
-                    <ListItem textSize="0.65em" margin="0px 0px 0px 40px">Android: NN API</ListItem>
-                    <ListItem textSize="0.65em" margin="0px 0px 0px 40px">Windows/Linux: clDNN</ListItem>
-                    <ListItem textSize="0.65em" margin="0px 0px 0px 40px">Windows: DirectML API</ListItem>
+                    <ListItem textSize="0.65em" margin="5px 0px 0px 40px">Mac OS: MPS/BNNS API</ListItem>
+                    <ListItem textSize="0.65em" margin="5px 0px 0px 40px">Android: NN API</ListItem>
+                    <ListItem textSize="0.65em" margin="5px 0px 0px 40px">Windows/Linux: clDNN</ListItem>
+                    <ListItem textSize="0.65em" margin="5px 0px 0px 40px">Windows: DirectML API</ListItem>
                   </List>
-              </Appear>
-
             </List>
         </Slide>
 
-        <Slide
-          onActive={slideIndex => {
-            console.info(`Viewing slide index: ${slideIndex}.`); // eslint-disable-line no-console
-          }}
-          id="wait-what"
-          goTo={4}
-          transition={[
-            'fade',
-            (transitioning, forward) => {
-              const angle = forward ? -180 : 180;
-              return {
-                transform: `
-                  translate3d(0%, ${transitioning ? 100 : 0}%, 0)
-                  rotate(${transitioning ? angle : 0}deg)
-                `,
-                backgroundColor: transitioning ? '#26afff' : '#000'
-              };
-            }
-          ]}
-          bgColor="white"
-          notes="You can even put notes on your slide. How awesome is that?"
-        >
-          {/* <Image src={images.kat.replace('/', '')} margin="0px auto 40px" /> */}
-          <Heading size={2} caps fit textColor="primary" textFont="primary">
-            Wait what?
+        <Slide transition={['fade']} bgColor="secondary">
+          <Heading size={5} textColor="primary" caps>
+          Web NN API POC 功能
           </Heading>
+
+          <List textColor="gray" margin="60px auto 0px">
+                <ListItem textSize="0.8em">运算支持</ListItem>
+                  <List>
+                    <ListItem textSize="0.65em" margin="5px 0px 0px 40px">ADD, AVERAGE_POOL_2D, CONCATENATION, CONV_2D, DEPTHWISE_CONV_2D, MAX_POOL_2D, MUL, RESHAPE, SOFTMAX, FULLY_CONNECTED
+</ListItem>
+                  </List>
+            </List>
+            <List textColor="gray">
+                <ListItem textSize="0.8em">模型支持</ListItem>
+                  <List>
+                    <ListItem textSize="0.65em" margin="10px 0px 0px 40px">TFLite 模型: MobileNet V1/V2, SqueezeNet, Inception V3, SSD MobileNet
+                    </ListItem>
+                    <ListItem textSize="0.65em" margin="10px 0px 0px 40px">
+                    TF.js 模型: MobileNet, PoseNet
+                    </ListItem>
+                    <ListItem textSize="0.65em" margin="10px 0px 0px 40px">
+                    ONNX 模型: MobileNet V2, SqueezeNet
+                    </ListItem>
+                  </List>
+            </List>
+            <List textColor="gray">
+                <ListItem textSize="0.8em">原生 API 映射</ListItem>
+                  <List>
+                    <ListItem textSize="0.65em" margin="10px 0px 0px 40px">MPS/BNNS, NNAPI and clDNN
+
+</ListItem>
+                  </List>
+            </List>
         </Slide>
-        <Slide transition={['fade']} bgColor="tertiary">
-          <Heading size={6} textColor="primary" caps>
-            Typography
+
+        <Slide transition={['zoom']} bgColor="secondary">
+          <Heading caps fit textColor='primary' margin="0px 0 20px">
+          Web NN API POC 示例及基准测试
           </Heading>
-          <Heading size={1} textColor="secondary">
-            Heading 1
-          </Heading>
-          <Heading size={2} textColor="secondary">
-            Heading 2
-          </Heading>
-          <Heading size={3} textColor="secondary">
-            Heading 3
-          </Heading>
-          <Heading size={4} textColor="secondary">
-            Heading 4
-          </Heading>
-          <Heading size={5} textColor="secondary">
-            Heading 5
-          </Heading>
-          <Text size={6} textColor="secondary">
-            Standard text
-          </Text>
+            <List textColor="gray" margin="40px auto 0px">
+                <ListItem textSize="0.8em"><Link href='https://github.com/intel/webml-polyfill/tree/master/examples'>示例</Link></ListItem>
+                  <List>
+                    <ListItem textSize="0.65em" margin="5px 0px 0px 40px">图像分类: MobileNet, SqueezeNet, Inception V3</ListItem>
+                    <ListItem textSize="0.65em" margin="5px 0px 0px 40px">目标检测: SSD MobileNet</ListItem>
+                    <ListItem textSize="0.65em" margin="5px 0px 0px 40px">姿态识别: PoseNet</ListItem>
+                    <ListItem textSize="0.65em" margin="5px 0px 0px 40px">静态图像和摄像头支持</ListItem>
+                  </List>
+            </List>   
+            <List textColor="gray" margin="20px auto 0px">
+                <ListItem textSize="0.8em"><Link href='https://github.com/intel/webml-polyfill/tree/master/test'>测试</Link></ListItem>
+                  <List>
+                    <ListItem textSize="0.65em" margin="5px 0px 0px 40px">转换 NN API CTS C++ 测试用例到 JavaScript 版本</ListItem>
+                    <ListItem textSize="0.65em" margin="5px 0px 0px 40px">500+ 测试用例</ListItem>
+                  </List>
+            </List>  
+            <List textColor="gray" margin="20px auto 0px">
+                <ListItem textSize="0.8em"><Link href='https://github.com/intel/webml-polyfill/tree/master/benchmark'>基准测试</Link></ListItem>
+                  <List>
+                    <ListItem textSize="0.65em" margin="5px 0px 0px 40px">覆盖全部支持的模型</ListItem>
+                    <ListItem textSize="0.65em" margin="5px 0px 0px 40px">Polyfill (WebGL + WASM) 性能测试</ListItem>
+                    <ListItem textSize="0.65em" margin="5px 0px 0px 40px">Web NN API 性能测试</ListItem>
+                  </List>
+            </List>             
         </Slide>
-        <Slide transition={['fade']} bgColor="primary" textColor="tertiary">
-          <Heading size={6} textColor="secondary" caps>
-            Standard List
+        
+        <Slide transition={['fade']} bgColor="secondary">
+          <Heading caps fit textColor='primary' margin="0px 0 20px">
+          Web NN API POC 性能数据 (Win/Mac/Android)
           </Heading>
-          <List>
-            <ListItem>Item 1</ListItem>
-            <ListItem>Item 2</ListItem>
-            <ListItem>Item 3</ListItem>
-            <ListItem>Item 4</ListItem>
-          </List>
+          <Image src={images.perf1.replace('/', '')} margin="20px auto 0px" height="25vh" />
+          <Image src={images.perf2.replace('/', '')} margin="20px auto 20px" height="25vh" />
+          <List textColor="gray">
+                <ListItem textSize="0.8em">和 WebGL polyfill 相比有显著性能提升</ListItem>
+                <ListItem textSize="0.8em">为 Web 应用带来接近原生的性能</ListItem>
+                <ListItem textSize="0.8em">为 Web 应用带来原生硬件和软件的优化</ListItem>
+            </List>
         </Slide>
+
+        <Slide transition={['zoom']} bgColor="secondary">
+          <Heading size={1} fit caps lineHeight={1} textColor="primary">
+          Web Neural Network API 合作与支持
+          </Heading>
+          <Layout>
+            <Fill>
+            <List textColor="gray">
+                <ListItem textSize="0.65em" margin="10px 0px 0px 0px">Web NN API 项目得到了谷歌、微软及 Mozilla 等公司及组织的广泛支持</ListItem>
+                <ListItem textSize="0.65em" margin="10px 0px 0px 0px"></ListItem>
+                <ListItem textSize="0.65em" margin="10px 0px 0px 0px"></ListItem>
+                <ListItem textSize="0.65em" margin="10px 0px 0px 0px"></ListItem>
+                <ListItem textSize="0.65em" margin="10px 0px 0px 0px"></ListItem>
+                <ListItem textSize="0.65em" margin="10px 0px 0px 0px"></ListItem>
+                <ListItem textSize="0.65em" margin="10px 0px 0px 0px"></ListItem>
+            </List>
+            </Fill>
+            <Fill>
+              <Image src={images.cgqr.replace('/', '')} margin="20px auto 0px" height="60vh" />
+            </Fill>
+          </Layout>
+        </Slide>
+
+        <Slide transition={['zoom']} bgColor="secondary">
+          <Heading size={1} fit caps lineHeight={1} textColor="primary">
+          Web Neural Network API 标准规范
+          </Heading>
+          <Layout>
+            <Fill>
+            <List textColor="gray">
+                <ListItem textSize="0.65em" margin="10px 0px 0px 0px">2018-11-02: <Link href='https://webmachinelearning.github.io/webnn/'>社区小组报告草案 (Draft Community Group Report)</Link></ListItem>
+                <ListItem textSize="0.65em" margin="10px 0px 0px 0px">在 W3C Web ML 社区组 (WebML CG) 起草</ListItem>
+                <ListItem textSize="0.65em" margin="10px 0px 0px 0px">用于神经网络推理硬件加速的专用 API</ListItem>
+                <ListItem textSize="0.65em" margin="10px 0px 0px 0px">从 NN API 用例开始</ListItem>
+                <ListItem textSize="0.65em" margin="10px 0px 0px 40px">高级用例: 构建在预训练的深度神经网络模型之上, 例如人物检测、骨架检测及随机图像生成等</ListItem>
+                <ListItem textSize="0.65em" margin="10px 0px 0px 40px">API 级用例: ML 框架将引用 WebML API，以便应用开发人员通过框架使用这些功能，例如构建自定义层、性能加速等</ListItem>
+            </List>
+            </Fill>
+            <Fill>
+              <Image src={images.nnspec.replace('/', '')} margin="20px auto 0px" height="60vh" />
+            </Fill>
+          </Layout>
+        </Slide>
+
+        <Slide transition={['zoom']} bgColor="secondary">
+          <Heading size={1} fit caps lineHeight={1} textColor="primary">
+          W3C Web Neural Network API 社区组
+          </Heading>
+          <Layout>
+            <Fill>
+            <List textColor="gray">
+                <ListItem textSize="0.65em" margin="10px 0px 0px 0px">2018-10-03: W3C Web ML 社区组 (WebML CG) 成立</ListItem>
+                <ListItem textSize="0.65em" margin="10px 0px 0px 0px">2018-10-11: <Link href='https://webmachinelearning.github.io/charter/'>WebML CG 章程</Link></ListItem>
+                <ListItem textSize="0.65em" margin="10px 0px 0px 0px">CG 主席: Anssi Kostiainen (Intel)</ListItem>
+                <ListItem textSize="0.65em" margin="10px 0px 0px 0px">通过在浏览器中孵化和开发用于机器学习推理的专用低级 Web API，使机器学习成为一流的 Web 公民</ListItem>
+                <ListItem textSize="0.65em" margin="10px 0px 0px 0px">当前参与者: 英特尔, 华为, 微软, Mozilla 基金会, KDDI 等等</ListItem>
+                <ListItem textSize="0.65em" margin="10px 0px 0px 0px">小组邀请浏览器引擎开发人员，硬件供应商，Web 应用程序开发人员以及对机器学习感兴趣的更广泛的 Web 社区参与</ListItem>
+            </List>
+            </Fill>
+            <Fill>
+              <Image src={images.cgqr.replace('/', '')} margin="20px auto 0px" height="60vh" />
+            </Fill>
+          </Layout>
+        </Slide>
+ 
         <Slide transition={['fade']} bgColor="secondary" textColor="primary">
-          <BlockQuote>
-            <Quote>Example Quote</Quote>
-            <Cite>Author</Cite>
-          </BlockQuote>
+          <Quote>
+            谢谢!
+          </Quote>
         </Slide>
       </Deck>
     );

@@ -1,0 +1,1 @@
+const nn = navigator.ml.getNeuralNetworkContext(); 
