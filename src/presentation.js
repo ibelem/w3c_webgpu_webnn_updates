@@ -320,7 +320,7 @@ export default class Presentation extends React.Component {
             <List textColor="gray" margin="20px auto 0px">
                 <ListItem textSize="0.8em"><Link href='https://github.com/intel/webml-polyfill/tree/master/test'>测试</Link></ListItem>
                   <List>
-                    <ListItem textSize="0.65em" margin="5px 0px 0px 40px">转换 NN API CTS C++ 测试用例到 JavaScript 版本</ListItem>
+                    <ListItem textSize="0.65em" margin="5px 0px 0px 40px">转换 NN API CTS C++ 测试用例到 JavaScript</ListItem>
                     <ListItem textSize="0.65em" margin="5px 0px 0px 40px">500+ 测试用例</ListItem>
                   </List>
             </List>  
@@ -405,7 +405,7 @@ export default class Presentation extends React.Component {
                 <ListItem textSize="0.55em" margin="10px 0px 0px 40px">Apple MPS 团队</ListItem>
 
                 <ListItem textSize="0.65em" margin="10px 0px 0px 0px">W3C TPAC 2018</ListItem>
-                <ListItem textSize="0.55em" margin="10px 0px 0px 40px">W3C 首席执行官 Jeff Jaffe 在“令人印象深刻的进一步创新管道”背景下的主题演讲中突出了 Intel Web NN API POC 的工作</ListItem>
+                <ListItem textSize="0.55em" margin="10px 0px 0px 40px">W3C CEO Jeff Jaffe 在 "令人印象深刻的进一步创新" 背景下的主题演讲中突出了 Intel Web NN API POC 的工作</ListItem>
                 <ListItem textSize="0.55em" margin="10px 0px 0px 40px">2018: 英特尔主导的 WebML 是最受欢迎的分组会议之一，吸引了包括所有浏览器供应商及 W3C TAG 成员的参与</ListItem>
             </List>
             </Fill>
