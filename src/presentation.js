@@ -49,6 +49,10 @@ const images = {
   perf2: require('../src/assets/perf2.png'),
   cgqr: require('../src/assets/cgqr.png'),
   nnspec: require('../src/assets/nnspec.png'),
+  pqr: require('../src/assets/pqr.png'),
+  demo1: require('../src/assets/demo1.png'),
+  demo2: require('../src/assets/demo2.png'),
+  cooperation1: require('../src/assets/cooperation1.png'),
 };
 
 const theme = createTheme(
@@ -215,7 +219,7 @@ export default class Presentation extends React.Component {
           机器学习/深度学习
           </Text>
          
-          <Image src={images.apistack.replace('/', '')} margin="40px auto 0px" height="46vh" />
+          <Image src={images.apistack.replace('/', '')} margin="40px auto 0px" height="40vh" />
 
           <List textColor="gray">
               <Appear>
@@ -302,6 +306,8 @@ export default class Presentation extends React.Component {
           <Heading caps fit textColor='primary' margin="0px 0 20px">
           Web NN API POC 示例及基准测试
           </Heading>
+          <Layout>
+            <Fill>
             <List textColor="gray" margin="40px auto 0px">
                 <ListItem textSize="0.8em"><Link href='https://github.com/intel/webml-polyfill/tree/master/examples'>示例</Link></ListItem>
                   <List>
@@ -325,7 +331,51 @@ export default class Presentation extends React.Component {
                     <ListItem textSize="0.65em" margin="5px 0px 0px 40px">Polyfill (WebGL + WASM) 性能测试</ListItem>
                     <ListItem textSize="0.65em" margin="5px 0px 0px 40px">Web NN API 性能测试</ListItem>
                   </List>
-            </List>             
+            </List> 
+            </Fill>
+            <Fill>
+              
+
+            <Anim
+            onAnim={(forwards, animIndex) => {
+              /* eslint-disable */
+              console.log('forwards ', forwards);
+              console.log('animIndex ', animIndex);
+              /* eslint-enable */
+            }}
+            fromStyle={{
+              opacity: 0,
+              transform: 'translate3d(0px, 0px, 0px) scale(1) rotate(0deg)'
+            }}
+            toStyle={[
+              {
+                opacity: 1,
+                transform:
+                  'translate3d(0px, 0px, 0px) scale(1) rotate(0deg)'
+              },
+              {
+                opacity: 1,
+                transform:
+                  'translate3d(0px, 0px, 0px) scale(1.2) rotate(0deg)'
+              },
+              {
+                opacity: 1,
+                transform:
+                  'translate3d(0px, 0px, 0px) scale(0) rotate(0deg)'
+              }
+            ]}
+            easing={'bounceOut'}
+            transitionDuration={500}
+          >
+            <div>
+              <Image src={images.demo1.replace('/', '')} margin="20px auto 0px" height="60vh" />
+            </div>
+          </Anim>
+          <Appear>
+            <Image src={images.demo2.replace('/', '')} margin="-420px auto 0px" height="60vh" />
+          </Appear>
+            </Fill>
+          </Layout>            
         </Slide>
         
         <Slide transition={['fade']} bgColor="secondary">
@@ -348,17 +398,19 @@ export default class Presentation extends React.Component {
           <Layout>
             <Fill>
             <List textColor="gray">
-                <ListItem textSize="0.65em" margin="10px 0px 0px 0px">Web NN API 项目得到了谷歌、微软及 Mozilla 等公司及组织的广泛支持</ListItem>
-                <ListItem textSize="0.65em" margin="10px 0px 0px 0px"></ListItem>
-                <ListItem textSize="0.65em" margin="10px 0px 0px 0px"></ListItem>
-                <ListItem textSize="0.65em" margin="10px 0px 0px 0px"></ListItem>
-                <ListItem textSize="0.65em" margin="10px 0px 0px 0px"></ListItem>
-                <ListItem textSize="0.65em" margin="10px 0px 0px 0px"></ListItem>
-                <ListItem textSize="0.65em" margin="10px 0px 0px 0px"></ListItem>
+                <ListItem textSize="0.65em" margin="60px 0px 0px 0px">WebML 项目得到谷歌、微软等的广泛支持</ListItem>
+                <ListItem textSize="0.55em" margin="10px 0px 0px 40px">Google TensorFlowLite/TensorFlow.js 团队, Chrome 团队</ListItem>
+                <ListItem textSize="0.55em" margin="10px 0px 0px 40px">Microsoft WinML 及 Edge 团队</ListItem>
+                <ListItem textSize="0.55em" margin="10px 0px 0px 40px">Mozilla 团队</ListItem>
+                <ListItem textSize="0.55em" margin="10px 0px 0px 40px">Apple MPS 团队</ListItem>
+
+                <ListItem textSize="0.65em" margin="10px 0px 0px 0px">W3C TPAC 2018</ListItem>
+                <ListItem textSize="0.55em" margin="10px 0px 0px 40px">W3C 首席执行官 Jeff Jaffe 在“令人印象深刻的进一步创新管道”背景下的主题演讲中突出了 Intel Web NN API POC 的工作</ListItem>
+                <ListItem textSize="0.55em" margin="10px 0px 0px 40px">2018: 英特尔主导的 WebML 是最受欢迎的分组会议之一，吸引了包括所有浏览器供应商及 W3C TAG 成员的参与</ListItem>
             </List>
             </Fill>
             <Fill>
-              <Image src={images.cgqr.replace('/', '')} margin="20px auto 0px" height="60vh" />
+              <Image src={images.cooperation1.replace('/', '')} margin="60px auto 0px" height="40vh" />
             </Fill>
           </Layout>
         </Slide>
@@ -370,39 +422,56 @@ export default class Presentation extends React.Component {
           <Layout>
             <Fill>
             <List textColor="gray">
-                <ListItem textSize="0.65em" margin="10px 0px 0px 0px">2018-11-02: <Link href='https://webmachinelearning.github.io/webnn/'>社区小组报告草案 (Draft Community Group Report)</Link></ListItem>
+                <ListItem textSize="0.65em" margin="60px 0px 0px 0px">2018-11-02: <Link href='https://webmachinelearning.github.io/webnn/'>社区小组报告草案 (Draft Community Group Report)</Link></ListItem>
                 <ListItem textSize="0.65em" margin="10px 0px 0px 0px">在 W3C Web ML 社区组 (WebML CG) 起草</ListItem>
                 <ListItem textSize="0.65em" margin="10px 0px 0px 0px">用于神经网络推理硬件加速的专用 API</ListItem>
-                <ListItem textSize="0.65em" margin="10px 0px 0px 0px">从 NN API 用例开始</ListItem>
+                <ListItem textSize="0.65em" margin="10px 0px 0px 0px">CG 召开了第一次会议，成员们同意将重点放在使用用例来定义规范工作</ListItem>
                 <ListItem textSize="0.65em" margin="10px 0px 0px 40px">高级用例: 构建在预训练的深度神经网络模型之上, 例如人物检测、骨架检测及随机图像生成等</ListItem>
                 <ListItem textSize="0.65em" margin="10px 0px 0px 40px">API 级用例: ML 框架将引用 WebML API，以便应用开发人员通过框架使用这些功能，例如构建自定义层、性能加速等</ListItem>
+                <ListItem textSize="0.65em" margin="10px 0px 0px 0px">2018 年晚些时候推进规范开发</ListItem>
             </List>
             </Fill>
             <Fill>
-              <Image src={images.nnspec.replace('/', '')} margin="20px auto 0px" height="60vh" />
+              <Image src={images.nnspec.replace('/', '')} margin="40px auto 0px" height="60vh" />
             </Fill>
           </Layout>
         </Slide>
 
         <Slide transition={['zoom']} bgColor="secondary">
           <Heading size={1} fit caps lineHeight={1} textColor="primary">
-          W3C Web Neural Network API 社区组
+          W3C Machine Learning for the Web 社区组
           </Heading>
           <Layout>
             <Fill>
             <List textColor="gray">
-                <ListItem textSize="0.65em" margin="10px 0px 0px 0px">2018-10-03: W3C Web ML 社区组 (WebML CG) 成立</ListItem>
-                <ListItem textSize="0.65em" margin="10px 0px 0px 0px">2018-10-11: <Link href='https://webmachinelearning.github.io/charter/'>WebML CG 章程</Link></ListItem>
+                <ListItem textSize="0.65em" margin="60px 0px 0px 0px">2018-10-03: W3C Web ML 社区组 (WebML CG) 成立</ListItem>
                 <ListItem textSize="0.65em" margin="10px 0px 0px 0px">CG 主席: Anssi Kostiainen (Intel)</ListItem>
-                <ListItem textSize="0.65em" margin="10px 0px 0px 0px">通过在浏览器中孵化和开发用于机器学习推理的专用低级 Web API，使机器学习成为一流的 Web 公民</ListItem>
+                <ListItem textSize="0.65em" margin="10px 0px 0px 0px">2018-10-11: <Link href='https://webmachinelearning.github.io/charter/'>WebML CG 章程</Link></ListItem>
+                <ListItem textSize="0.65em" margin="10px 0px 0px 0px">章程范围: 通过在浏览器中孵化和开发用于机器学习推理的专用低级 Web API，使机器学习成为 Web 的一等公民</ListItem>
                 <ListItem textSize="0.65em" margin="10px 0px 0px 0px">当前参与者: 英特尔, 华为, 微软, Mozilla 基金会, KDDI 等等</ListItem>
+                <ListItem textSize="0.65em" margin="10px 0px 0px 0px">微软承诺在即将举行的 We Are Developers AI 大会 (2018 年 12 月 4 日至 5 日, 维也纳)上进一步推广新创建的 WebML CG</ListItem>
                 <ListItem textSize="0.65em" margin="10px 0px 0px 0px">小组邀请浏览器引擎开发人员，硬件供应商，Web 应用程序开发人员以及对机器学习感兴趣的更广泛的 Web 社区参与</ListItem>
             </List>
             </Fill>
             <Fill>
-              <Image src={images.cgqr.replace('/', '')} margin="20px auto 0px" height="60vh" />
+              <Image src={images.cgqr.replace('/', '')} margin="40px auto 0px" height="60vh" />
             </Fill>
           </Layout>
+        </Slide>
+
+        <Slide transition={['zoom']} bgColor="secondary">
+          <Heading textSize="2.0em" caps lineHeight={1} textColor="primary">
+          欢迎关注
+          </Heading>
+
+          <Image src={images.pqr.replace('/', '')} margin="20px auto 0px" height="50vh" />
+
+          <List textColor="gray">
+            <ListItem textSize="0.65em" margin="10px auto 0px"><Link href='https://github.com/intel/webml-polyfill'>https://github.com/intel/webml-polyfill</Link></ListItem>
+            <ListItem textSize="0.65em" margin="10px auto 0px"><Link href='https://webmachinelearning.github.io/'>https://webmachinelearning.github.io</Link></ListItem>
+            <ListItem textSize="0.65em" margin="10px auto 0px"><Link href='https://webmachinelearning.github.io/'>https://www.w3.org/community/webmachinelearning/</Link></ListItem>
+          </List>
+
         </Slide>
  
         <Slide transition={['fade']} bgColor="secondary" textColor="primary">
