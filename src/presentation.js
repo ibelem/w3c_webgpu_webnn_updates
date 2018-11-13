@@ -397,22 +397,49 @@ export default class Presentation extends React.Component {
           </Heading>
           <Layout>
             <Fill>
+          <BlockQuote  margin="40px 0px 0px 20px">
+            <Quote textSize="0.8em">The high-level design and positioning looks pretty good</Quote>
+            <Cite textSize="0.6em" textColor="gray" margin="20px 0px 20px 0px">Corentin Wallez (Chrome WebGPU rep)</Cite>
+            <Quote textSize="0.8em">It would make sense to have a cross-platform NN API mapping to OS backends</Quote>
+            <Cite textSize="0.6em" textColor="gray" margin="20px 0px 20px 0px">Victor Miura (Chrome GPU team manager)</Cite>
+            <Quote textSize="0.8em">Form a Web ML CG like the WebGPU CG</Quote>
+            <Cite textSize="0.6em" textColor="gray" margin="20px 0px 20px 0px">Ken Russell (Google)</Cite>
+          </BlockQuote>
+          </Fill>
+          <Fill>
+          <BlockQuote  margin="40px 0px 0px 20px">
+            <Quote textSize="0.8em">You have done something really incredible with your Chromium WebML build!</Quote>
+            <Cite textSize="0.6em" textColor="gray" margin="20px 0px 20px 0px">Nikhil Thorat (TF.js maintainer)</Cite>
+            <Quote textSize="0.8em">Join the TF.js and Chrome team conversation to move things forward!</Quote>
+            <Cite textSize="0.6em" textColor="gray" margin="20px 0px 20px 0px">Daniel Smilkov (TF.js maintainer)</Cite>
+          </BlockQuote>
+          </Fill>
+          </Layout>
+        </Slide>
+
+        <Slide transition={['spin']} bgColor="secondary">
+          <Heading size={1} fit caps lineHeight={1} textColor="primary">
+          Web Neural Network API 合作与支持
+          </Heading>
+          <Layout>
+            <Fill>
             <List textColor="gray">
                 <ListItem textSize="0.65em" margin="60px 0px 0px 0px">WebML 项目得到谷歌、微软等的广泛支持</ListItem>
                 <ListItem textSize="0.55em" margin="10px 0px 0px 40px">Google TensorFlowLite/TensorFlow.js 团队, Chrome 团队</ListItem>
                 <ListItem textSize="0.55em" margin="10px 0px 0px 40px">Microsoft WinML 及 Edge 团队</ListItem>
                 <ListItem textSize="0.55em" margin="10px 0px 0px 40px">Mozilla 团队</ListItem>
                 <ListItem textSize="0.55em" margin="10px 0px 0px 40px">Apple MPS 团队</ListItem>
-
-                <ListItem textSize="0.65em" margin="10px 0px 0px 0px">W3C TPAC 2018</ListItem>
-                <ListItem textSize="0.55em" margin="10px 0px 0px 40px">W3C CEO Jeff Jaffe 在 "令人印象深刻的进一步创新" 背景下的主题演讲中突出了 Intel Web NN API POC 的工作</ListItem>
-                <ListItem textSize="0.55em" margin="10px 0px 0px 40px">2018: 英特尔主导的 WebML 是最受欢迎的分组会议之一，吸引了包括所有浏览器供应商及 W3C TAG 成员的参与</ListItem>
+                <ListItem textSize="0.65em" margin="10px 0px 0px 0px">W3C TPAC 2018: 英特尔主导的 WebML 是最受欢迎的分组会议之一，吸引了包括所有浏览器供应商及 W3C TAG 成员的参与</ListItem>
             </List>
             </Fill>
             <Fill>
               <Image src={images.cooperation1.replace('/', '')} margin="60px auto 0px" height="40vh" />
             </Fill>
           </Layout>
+          <BlockQuote  margin="40px 0px 0px 20px">
+            <Quote textSize="0.8em">Intel-led machine learning is a key further innovation for W3C.</Quote>
+            <Cite textSize="0.6em" textColor="gray" margin="20px 0px 20px 0px">W3C CEO Jeff Jaffe</Cite>
+          </BlockQuote>
         </Slide>
 
         <Slide transition={['zoom']} bgColor="secondary">
