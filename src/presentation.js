@@ -372,7 +372,7 @@ export default class Presentation extends React.Component {
             </div>
           </Anim>
           <Appear>
-            <Image src={images.demo2.replace('/', '')} margin="-420px auto 0px" height="60vh" />
+            <Image src={images.demo2.replace('/', '')} margin="-500px auto 0px" height="60vh" />
           </Appear>
             </Fill>
           </Layout>            
@@ -422,7 +422,7 @@ export default class Presentation extends React.Component {
           <Layout>
             <Fill>
             <List textColor="gray">
-                <ListItem textSize="0.65em" margin="60px 0px 0px 0px">2018-11-02: <Link href='https://webmachinelearning.github.io/webnn/'>社区小组报告草案 (Draft Community Group Report)</Link></ListItem>
+                <ListItem textSize="0.65em" margin="80px 0px 0px 0px">2018-11-02: <Link href='https://webmachinelearning.github.io/webnn/'>社区小组报告草案 (Draft Community Group Report)</Link></ListItem>
                 <ListItem textSize="0.65em" margin="10px 0px 0px 0px">在 W3C Web ML 社区组 (WebML CG) 起草</ListItem>
                 <ListItem textSize="0.65em" margin="10px 0px 0px 0px">用于神经网络推理硬件加速的专用 API</ListItem>
                 <ListItem textSize="0.65em" margin="10px 0px 0px 0px">CG 召开了第一次会议，成员们同意将重点放在使用用例来定义规范工作</ListItem>
