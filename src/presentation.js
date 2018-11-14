@@ -39,6 +39,8 @@ import createTheme from 'spectacle/lib/themes/default';
 require('normalize.css');
 
 const images = {
+  gpucgqr: require('../src/assets/gpucgqr.png'),
+
   pg: require('../src/assets/performancegap.png'),
   pg2: require('../src/assets/performancegap2.png'),
   jsf: require('../src/assets/jsf.png'),
@@ -78,6 +80,91 @@ export default class Presentation extends React.Component {
         transitionDuration={500}
         theme={theme}
       >
+
+        <Slide transition={['zoom']} bgColor="primary">
+          <Heading size={1} fit caps lineHeight={1} textColor="secondary">
+          WebGPU 技术进展及社区组状态更新
+          </Heading>
+          <Text margin="80px 0 0" textColor="secondary" textSize="0.6em">
+          Shao Jiawei jiawei.shao@intel.com
+          </Text>
+          <Text margin="10px 0 0" textColor="secondary" textSize="0.6em">
+          张敏 belem.zhang@intel.com
+          </Text>
+          <Text margin="30px 0 0" textColor="secondary" textSize="0.8em">
+          英特尔开源技术中心
+          </Text>
+          <Text margin="10px 0 0" textColor="secondary" textSize="0.8em">
+          2018.11.17
+          </Text>
+        </Slide>
+
+        <Slide transition={['zoom']} bgColor="secondary">
+          <Heading size={1} fit caps lineHeight={1} textColor="primary">
+          Web Graphic 分层架构
+          </Heading>
+          <Layout>
+            <Fill>
+ 
+            </Fill>
+            <Fill>
+              <Image src={images.gpucgqr.replace('/', '')} margin="40px auto 0px" height="60vh" />
+            </Fill>
+          </Layout>
+        </Slide>
+
+       <Slide transition={['zoom']} bgColor="secondary">
+          <Heading size={1} fit caps lineHeight={1} textColor="primary">
+          W3C GPU for the Web 社区组
+          </Heading>
+          <Layout>
+            <Fill>
+            <List textColor="gray">
+                <ListItem textSize="0.65em" margin="60px 0px 0px 0px">2017-02-10: W3C WebGPU 社区组成立</ListItem>
+                <ListItem textSize="0.65em" margin="10px 0px 0px 0px">2017-03-29: <Link href='https://gpuweb.github.io/admin/cg-charter.html'>GPU for the Web CG 章程</Link></ListItem>
+                <ListItem textSize="0.65em" margin="10px 0px 0px 0px">设计一个新的 Web API，以高效，强大和安全的方式公开这些现代技术</ListItem>
+                <ListItem textSize="0.65em" margin="10px 0px 0px 0px">在拥有现代3D图形和计算功能的原生系统和 Web 平台之间提供接口</ListItem>
+                <ListItem textSize="0.55em" margin="10px 0px 0px 40px">Direct3D 12 (Microsoft)</ListItem>
+                <ListItem textSize="0.55em" margin="10px 0px 0px 40px">Vulkan (Khronos Group)</ListItem>
+                <ListItem textSize="0.55em" margin="10px 0px 0px 40px">Metal (Apple)</ListItem>
+                <ListItem textSize="0.65em" margin="10px 0px 0px 0px">将现代 GPU 中可用的通用计算工具暴露给 Web, 并研究着色器语言以生成跨平台解决方案</ListItem>
+            </List>
+            </Fill>
+            <Fill>
+              <Image src={images.gpucgqr.replace('/', '')} margin="40px auto 0px" height="60vh" />
+            </Fill>
+          </Layout>
+        </Slide>
+
+       <Slide transition={['spin']} bgColor="secondary">
+          <Heading size={1} fit caps lineHeight={1} textColor="primary">
+          W3C GPU for the Web 社区组
+          </Heading>
+          <Layout>
+            <Fill>
+            <List textColor="gray">
+                <ListItem textSize="0.65em" margin="60px 0px 0px 0px">主席: Dean Jackson (Apple), Corentin Wallez (Google)</ListItem>
+                <ListItem textSize="0.65em" margin="10px 0px 0px 0px">社区组参与者</ListItem>
+                <ListItem textSize="0.55em" margin="10px 0px 0px 40px">Apple, Google, Microsoft, Mozilla</ListItem>
+                <ListItem textSize="0.55em" margin="10px 0px 0px 40px">Intel, AMD, Huawei, Samsung, LG</ListItem>
+                <ListItem textSize="0.55em" margin="10px 0px 0px 40px">Adobe, Autodesk, Yandex, Unity, Netflix </ListItem>
+                <ListItem textSize="0.55em" margin="10px 0px 0px 40px">Alibaba, iQiyi</ListItem>
+                <ListItem textSize="0.55em" margin="10px 0px 0px 40px">...</ListItem>
+                <ListItem textSize="0.65em" margin="10px 0px 0px 0px">邀请浏览器引擎开发人员, GPU 硬件供应商, 3D 软件工程师等的广泛参与</ListItem>
+            </List>
+            </Fill>
+            <Fill>
+              <Image src={images.gpucgqr.replace('/', '')} margin="40px auto 0px" height="60vh" />
+            </Fill>
+          </Layout>
+        </Slide>
+
+        <Slide transition={['fade']} bgColor="primary" textColor="secondary">
+          <Quote textColor="secondary">
+            谢谢!
+          </Quote>
+        </Slide>
+
         <Slide transition={['zoom']} bgColor="primary">
           <Heading size={1} fit caps lineHeight={1} textColor="secondary">
           Web Neural Network API
@@ -86,12 +173,12 @@ export default class Presentation extends React.Component {
           技术进展及社区组状态更新
           </Text>
           <Text margin="60px 0 0" textColor="secondary" textSize="0.6em">
-          Hu Ningxin ningxin.hu@intel.com
+          胡宁馨 ningxin.hu@intel.com
           </Text>
           <Text margin="10px 0 0" textColor="secondary" textSize="0.6em">
-          Zhang Min belem.zhang@intel.com
+          张敏 belem.zhang@intel.com
           </Text>
-          <Text margin="10px 0 0" textColor="secondary" textSize="0.8em">
+          <Text margin="30px 0 0" textColor="secondary" textSize="0.8em">
           英特尔开源技术中心
           </Text>
           <Text margin="10px 0 0" textColor="secondary" textSize="0.8em">
@@ -391,7 +478,7 @@ export default class Presentation extends React.Component {
             </List>
         </Slide>
 
-        <Slide transition={['zoom']} bgColor="secondary">
+        {/* <Slide transition={['zoom']} bgColor="secondary">
           <Heading size={1} fit caps lineHeight={1} textColor="primary">
           Web Neural Network API 合作与支持
           </Heading>
@@ -415,7 +502,7 @@ export default class Presentation extends React.Component {
           </BlockQuote>
           </Fill>
           </Layout>
-        </Slide>
+        </Slide> */}
 
         <Slide transition={['spin']} bgColor="secondary">
           <Heading size={1} fit caps lineHeight={1} textColor="primary">
@@ -428,7 +515,6 @@ export default class Presentation extends React.Component {
                 <ListItem textSize="0.55em" margin="10px 0px 0px 40px">Google TensorFlowLite/TensorFlow.js 团队, Chrome 团队</ListItem>
                 <ListItem textSize="0.55em" margin="10px 0px 0px 40px">Microsoft WinML 及 Edge 团队</ListItem>
                 <ListItem textSize="0.55em" margin="10px 0px 0px 40px">Mozilla 团队</ListItem>
-                <ListItem textSize="0.55em" margin="10px 0px 0px 40px">Apple MPS 团队</ListItem>
                 <ListItem textSize="0.65em" margin="10px 0px 0px 0px">W3C TPAC 2018: 英特尔主导的 WebML 是最受欢迎的分组会议之一，吸引了包括所有浏览器供应商及 W3C TAG 成员的参与</ListItem>
             </List>
             </Fill>
@@ -449,7 +535,7 @@ export default class Presentation extends React.Component {
           <Layout>
             <Fill>
             <List textColor="gray">
-                <ListItem textSize="0.65em" margin="80px 0px 0px 0px">2018-11-02: <Link href='https://webmachinelearning.github.io/webnn/'>社区小组报告草案 (Draft Community Group Report)</Link></ListItem>
+                <ListItem textSize="0.65em" margin="80px 0px 0px 0px">2018-11-02: <Link href='https://webmachinelearning.github.io/webnn/'>社区组报告草案 (Draft Community Group Report)</Link></ListItem>
                 <ListItem textSize="0.65em" margin="10px 0px 0px 0px">在 W3C Web ML 社区组 (WebML CG) 起草</ListItem>
                 <ListItem textSize="0.65em" margin="10px 0px 0px 0px">用于神经网络推理硬件加速的专用 API</ListItem>
                 <ListItem textSize="0.65em" margin="10px 0px 0px 0px">CG 召开了第一次会议，成员们同意将重点放在使用用例来定义规范工作</ListItem>
@@ -471,12 +557,12 @@ export default class Presentation extends React.Component {
           <Layout>
             <Fill>
             <List textColor="gray">
-                <ListItem textSize="0.65em" margin="60px 0px 0px 0px">2018-10-03: W3C Web ML 社区组 (WebML CG) 成立</ListItem>
+                <ListItem textSize="0.65em" margin="60px 0px 0px 0px">2018-10-03: W3C Web ML 社区组成立</ListItem>
                 <ListItem textSize="0.65em" margin="10px 0px 0px 0px">CG 主席: Anssi Kostiainen (Intel)</ListItem>
                 <ListItem textSize="0.65em" margin="10px 0px 0px 0px">2018-10-11: <Link href='https://webmachinelearning.github.io/charter/'>WebML CG 章程</Link></ListItem>
                 <ListItem textSize="0.65em" margin="10px 0px 0px 0px">章程范围: 通过在浏览器中孵化和开发用于机器学习推理的专用低级 Web API，使机器学习成为 Web 的一等公民</ListItem>
                 <ListItem textSize="0.65em" margin="10px 0px 0px 0px">当前参与者: 英特尔, 华为, 微软, Mozilla 基金会, KDDI 等等</ListItem>
-                <ListItem textSize="0.65em" margin="10px 0px 0px 0px">微软承诺在即将举行的 We Are Developers AI 大会 (2018 年 12 月 4 日至 5 日, 维也纳)上进一步推广新创建的 WebML CG</ListItem>
+                <ListItem textSize="0.65em" margin="10px 0px 0px 0px">微软承诺在即将举行的 We Are Developers AI 大会 (2018 年 12 月 4 日至 5 日, 维也纳) 上进一步推广新建立的 WebML CG</ListItem>
                 <ListItem textSize="0.65em" margin="10px 0px 0px 0px">小组邀请浏览器引擎开发人员，硬件供应商，Web 应用程序开发人员以及对机器学习感兴趣的更广泛的 Web 社区参与</ListItem>
             </List>
             </Fill>
@@ -501,8 +587,8 @@ export default class Presentation extends React.Component {
 
         </Slide>
  
-        <Slide transition={['fade']} bgColor="secondary" textColor="primary">
-          <Quote>
+        <Slide transition={['fade']} bgColor="primary" textColor="secondary">
+          <Quote textColor="secondary">
             谢谢!
           </Quote>
         </Slide>
