@@ -39,7 +39,9 @@ import createTheme from 'spectacle/lib/themes/default';
 require('normalize.css');
 
 const images = {
+  webglstack: require('../src/assets/webglstack.png'),
   gpucgqr: require('../src/assets/gpucgqr.png'),
+  gltogpu: require('../src/assets/webgltogpu.png'),
 
   pg: require('../src/assets/performancegap.png'),
   pg2: require('../src/assets/performancegap2.png'),
@@ -82,7 +84,7 @@ export default class Presentation extends React.Component {
       >
 
         <Slide transition={['zoom']} bgColor="primary">
-          <Heading size={1} fit caps lineHeight={1} textColor="secondary">
+          <Heading size={1} fit lineHeight={1} textColor="secondary">
           WebGPU 技术进展及社区组状态更新
           </Heading>
           <Text margin="80px 0 0" textColor="secondary" textSize="0.6em">
@@ -99,22 +101,26 @@ export default class Presentation extends React.Component {
           </Text>
         </Slide>
 
-        <Slide transition={['zoom']} bgColor="secondary">
-          <Heading size={1} fit caps lineHeight={1} textColor="primary">
-          Web Graphic 分层架构
+        <Slide transition={['fade']} bgColor="secondary" bgImage={images.webglstack.replace('/', '')} bgRepeat='no-repeat' bgPosition='center' bgSize='80% 100%'
+          bgDarken={0}>
+          <Heading textSize="1.6em" lineHeight={1} textColor="primary" margin="-340px 0px 0px 0px" >
+          WebGL 架构
           </Heading>
-          <Layout>
-            <Fill>
- 
-            </Fill>
-            <Fill>
-              <Image src={images.gpucgqr.replace('/', '')} margin="40px auto 0px" height="60vh" />
-            </Fill>
-          </Layout>
         </Slide>
 
        <Slide transition={['zoom']} bgColor="secondary">
-          <Heading size={1} fit caps lineHeight={1} textColor="primary">
+          <Heading textSize="1.6em" lineHeight={1} textColor="primary">
+          WebGL 及 WebGPU 的对比
+          </Heading>
+          <Image src={images.gltogpu.replace('/', '')} margin="40px auto 0px" width="100vw" />
+          <List textColor="gray">
+                <ListItem textSize="0.8em">WWDC 2018: Apple 宣布在 macOS 10.14 (Mojave) 和 iOS 12 中弃用 OpenGL 并鼓励过渡到 Metal</ListItem>
+                <ListItem textSize="0.8em">使用 OpenGL ES 构建的应用程序将继续在 iOS 12 中运行，但在 iOS 12 中不推荐使用 OpenGL ES</ListItem>
+          </List>
+        </Slide>
+
+       <Slide transition={['zoom']} bgColor="secondary">
+          <Heading size={1} fit lineHeight={1} textColor="primary">
           W3C GPU for the Web 社区组
           </Heading>
           <Layout>
@@ -137,7 +143,7 @@ export default class Presentation extends React.Component {
         </Slide>
 
        <Slide transition={['spin']} bgColor="secondary">
-          <Heading size={1} fit caps lineHeight={1} textColor="primary">
+          <Heading size={1} fit lineHeight={1} textColor="primary">
           W3C GPU for the Web 社区组
           </Heading>
           <Layout>
@@ -166,7 +172,7 @@ export default class Presentation extends React.Component {
         </Slide>
 
         <Slide transition={['zoom']} bgColor="primary">
-          <Heading size={1} fit caps lineHeight={1} textColor="secondary">
+          <Heading size={1} fit lineHeight={1} textColor="secondary">
           Web Neural Network API
           </Heading>
           <Text margin="10px 0 0" textColor="secondary" size={1} bold>
@@ -187,14 +193,14 @@ export default class Presentation extends React.Component {
         </Slide>
 
         <Slide transition={['zoom', 'fade']} bgColor="secondary">
-          <Heading caps fit textColor='primary' margin="0px 0 20px">
+          <Heading fit textColor='primary' margin="0px 0 20px">
           JavaScript 机器学习/深度学习框架
           </Heading>
           <Layout>
             <Fill>
               <Heading
                 size={6}
-                caps
+                
                 textColor="secondary"
                 bgColor="#f3d54e"
                 margin={20}
@@ -221,7 +227,7 @@ export default class Presentation extends React.Component {
             <Fill>
               <Heading
                 size={6}
-                caps
+                
                 textColor="secondary"
                 bgColor="#f3d54e"
                 margin={20}
@@ -240,7 +246,7 @@ export default class Presentation extends React.Component {
         </Slide>
  
         <Slide transition={['fade']} bgColor="secondary">
-          <Heading size={5} textColor="primary" caps>
+          <Heading size={5} textColor="primary" >
           JavaScript 框架的性能问题
           </Heading>
           <Text textSize="1em" textColor="primary">
@@ -279,27 +285,21 @@ export default class Presentation extends React.Component {
         </Slide>
 
         <Slide transition={['fade']} bgColor="secondary">
-          <Heading size={5} textColor="primary" caps>
+          <Heading size={5} textColor="primary" >
           提议: Web Neural Network API
           </Heading>
          
           <Image src={images.proposal.replace('/', '')} margin="40px auto 0px" height="46vh" />
 
           <List textColor="gray">
-              <Appear>
                 <ListItem textSize="0.8em">用于深度神经网络推理的基于标准的 Web API</ListItem>
-              </Appear>
-              <Appear>
                 <ListItem textSize="0.8em">与文本、多媒体、传感器和 XR 等其他 Web API 集成</ListItem>
-              </Appear>
-              <Appear>
                 <ListItem textSize="0.8em">利用硬件加速，且将 Web 深度学习运算交由系统 API 完成</ListItem>
-              </Appear>
             </List>
         </Slide>
 
         <Slide transition={['fade']} bgColor="secondary">
-          <Heading size={5} textColor="primary" caps>
+          <Heading size={5} textColor="primary" >
           Web API 分层架构
           </Heading>
           <Text textSize="1em" textColor="primary">
@@ -309,20 +309,14 @@ export default class Presentation extends React.Component {
           <Image src={images.apistack.replace('/', '')} margin="40px auto 0px" height="40vh" />
 
           <List textColor="gray">
-              <Appear>
                 <ListItem textSize="0.8em">Usage API: 内置模型，易于集成 ⇒ W3C 形状检测 API</ListItem>
-              </Appear>
-              <Appear>
                 <ListItem textSize="0.8em">Model API: 模型预先训练，格式存在碎片化问题 ⇒ 未来的工作</ListItem>
-              </Appear>
-              <Appear>
                 <ListItem textSize="0.8em">Acceleration API: NN 底层 API，接近硬件优化，灵活适配 JS 框架 ⇒ 起点</ListItem>
-              </Appear>
             </List>
         </Slide>
 
         <Slide transition={['fade']} bgColor="secondary">
-          <Heading size={5} textColor="primary" caps>
+          <Heading size={5} textColor="primary" >
           Web Neural Network API POC
           </Heading>
 
@@ -336,7 +330,7 @@ export default class Presentation extends React.Component {
         </Slide>
 
         <Slide transition={['fade']} bgColor="secondary">
-          <Heading size={5} textColor="primary" caps>
+          <Heading size={5} textColor="primary" >
           Web NN API POC 的实现
           </Heading>
          
@@ -355,7 +349,7 @@ export default class Presentation extends React.Component {
         </Slide>
 
         <Slide transition={['fade']} bgColor="secondary">
-          <Heading size={5} textColor="primary" caps>
+          <Heading size={5} textColor="primary" >
           Web NN API POC 功能
           </Heading>
 
@@ -390,7 +384,7 @@ export default class Presentation extends React.Component {
         </Slide>
 
         <Slide transition={['zoom']} bgColor="secondary">
-          <Heading caps fit textColor='primary' margin="0px 0 20px">
+          <Heading fit textColor='primary' margin="0px 0 20px">
           Web NN API POC 示例及基准测试
           </Heading>
           <Layout>
@@ -443,11 +437,6 @@ export default class Presentation extends React.Component {
               {
                 opacity: 1,
                 transform:
-                  'translate3d(0px, 0px, 0px) scale(1.2) rotate(0deg)'
-              },
-              {
-                opacity: 1,
-                transform:
                   'translate3d(0px, 0px, 0px) scale(0) rotate(0deg)'
               }
             ]}
@@ -466,7 +455,7 @@ export default class Presentation extends React.Component {
         </Slide>
         
         <Slide transition={['fade']} bgColor="secondary">
-          <Heading caps fit textColor='primary' margin="0px 0 20px">
+          <Heading fit textColor='primary' margin="0px 0 20px">
           Web NN API POC 性能数据 (Win/Mac/Android)
           </Heading>
           <Image src={images.perf1.replace('/', '')} margin="20px auto 0px" height="25vh" />
@@ -479,7 +468,7 @@ export default class Presentation extends React.Component {
         </Slide>
 
         {/* <Slide transition={['zoom']} bgColor="secondary">
-          <Heading size={1} fit caps lineHeight={1} textColor="primary">
+          <Heading size={1} fit lineHeight={1} textColor="primary">
           Web Neural Network API 合作与支持
           </Heading>
           <Layout>
@@ -505,7 +494,7 @@ export default class Presentation extends React.Component {
         </Slide> */}
 
         <Slide transition={['spin']} bgColor="secondary">
-          <Heading size={1} fit caps lineHeight={1} textColor="primary">
+          <Heading size={1} fit lineHeight={1} textColor="primary">
           Web Neural Network API 合作与支持
           </Heading>
           <Layout>
@@ -529,7 +518,7 @@ export default class Presentation extends React.Component {
         </Slide>
 
         <Slide transition={['zoom']} bgColor="secondary">
-          <Heading size={1} fit caps lineHeight={1} textColor="primary">
+          <Heading size={1} fit lineHeight={1} textColor="primary">
           Web Neural Network API 标准规范
           </Heading>
           <Layout>
@@ -551,7 +540,7 @@ export default class Presentation extends React.Component {
         </Slide>
 
         <Slide transition={['zoom']} bgColor="secondary">
-          <Heading size={1} fit caps lineHeight={1} textColor="primary">
+          <Heading size={1} fit lineHeight={1} textColor="primary">
           W3C Machine Learning for the Web 社区组
           </Heading>
           <Layout>
@@ -573,7 +562,7 @@ export default class Presentation extends React.Component {
         </Slide>
 
         <Slide transition={['zoom']} bgColor="secondary">
-          <Heading textSize="2.0em" caps lineHeight={1} textColor="primary">
+          <Heading textSize="2.0em" lineHeight={1} textColor="primary">
           欢迎关注
           </Heading>
 
