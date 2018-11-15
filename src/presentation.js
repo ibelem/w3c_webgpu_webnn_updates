@@ -127,7 +127,7 @@ export default class Presentation extends React.Component {
           <Image src={images.gltogpu.replace('/', '')} margin="40px auto 0px" height="42vh" />
           <List textColor="gray">
                 <ListItem textSize="0.65em">WWDC 2018: Apple 宣布在 macOS 10.14 和 iOS 12 中弃用 OpenGL 并鼓励过渡到 Metal</ListItem>
-                <ListItem textSize="0.65em">使用 OpenGL ES 构建的应用程序将继续在 iOS 12 中运行，但不再不推荐使用 OpenGL ES</ListItem>
+                <ListItem textSize="0.65em">使用 OpenGL ES 构建的应用程序将继续在 iOS 12 中运行，但不再推荐使用 OpenGL ES</ListItem>
                 <ListItem textSize="0.65em">2018-06-01: <Link href='https://groups.google.com/a/chromium.org/forum/#!topic/blink-dev/dxqWTSvyhDg'>[blink-dev] Intent to Implement: WebGPU (Google)</Link></ListItem>
           </List>
         </Slide>
@@ -654,7 +654,7 @@ export default class Presentation extends React.Component {
           <List textColor="gray">
             <ListItem textSize="0.65em" margin="10px auto 0px"><Link href='https://github.com/intel/webml-polyfill'>https://github.com/intel/webml-polyfill</Link></ListItem>
             <ListItem textSize="0.65em" margin="10px auto 0px"><Link href='https://webmachinelearning.github.io/'>https://webmachinelearning.github.io</Link></ListItem>
-            <ListItem textSize="0.65em" margin="10px auto 0px"><Link href='https://webmachinelearning.github.io/'>https://www.w3.org/community/webmachinelearning/</Link></ListItem>
+            <ListItem textSize="0.65em" margin="10px auto 0px"><Link href='https://www.w3.org/community/webmachinelearning/'>https://www.w3.org/community/webmachinelearning/</Link></ListItem>
           </List>
 
         </Slide>
