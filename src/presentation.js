@@ -230,7 +230,7 @@ export default class Presentation extends React.Component {
           </List>
         </Slide>
 
-        <Slide transition={['zoom']} bgColor="secondary">
+        <Slide transition={['spin']} bgColor="secondary">
           <Heading textSize="1.6em" lineHeight={1} textColor="primary">
           Intel Web Team 在 WebGPU 的工作
           </Heading>
