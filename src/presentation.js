@@ -87,6 +87,175 @@ export default class Presentation extends React.Component {
 
         <Slide transition={['zoom']} bgColor="primary">
           <Heading size={1} fit lineHeight={1} textColor="secondary">
+          WebGPU 技术进展及社区组状态更新
+          </Heading>
+          <Text margin="80px 0 0" textColor="secondary" textSize="0.6em">
+          邵嘉炜 jiawei.shao@intel.com
+          </Text>
+          <Text margin="10px 0 0" textColor="secondary" textSize="0.6em">
+          何云超 yunchao.he@intel.com
+          </Text>
+          <Text margin="10px 0 0" textColor="secondary" textSize="0.6em">
+          张敏 belem.zhang@intel.com
+          </Text>
+          <Text margin="30px 0 0" textColor="secondary" textSize="0.8em">
+          英特尔开源技术中心
+          </Text>
+          <Text margin="10px 0 0" textColor="secondary" textSize="0.8em">
+          2018.11.17
+          </Text>
+        </Slide>
+
+        <Slide transition={['fade']} bgColor="secondary" bgImage={images.webglstack.replace('/', '')} bgRepeat='no-repeat' bgPosition='center' bgSize='80% 100%'
+          bgDarken={0}>
+          <Heading textSize="1.6em" lineHeight={1} textColor="primary" margin="-340px 0px 0px 0px" >
+          WebGL 架构
+          </Heading>
+        </Slide>
+
+        <Slide transition={['fade']} bgColor="secondary" bgImage={images.glversion.replace('/', '')} bgRepeat='no-repeat' bgPosition='center' bgSize='80% 100%'
+          bgDarken={0}>
+          <Heading textSize="1.6em" lineHeight={1} textColor="primary" margin="-340px 0px 0px 0px" >
+          WebGL 版本演进
+          </Heading>
+        </Slide>
+
+       <Slide transition={['zoom']} bgColor="secondary">
+          <Heading textSize="1.6em" lineHeight={1} textColor="primary">
+          WebGL 及 WebGPU 的对比
+          </Heading>
+          <Image src={images.gltogpu.replace('/', '')} margin="40px auto 0px" height="42vh" />
+          <List textColor="gray">
+                <ListItem textSize="0.65em">WWDC 2018: Apple 不赞成在 macOS 10.14 和 iOS 12 中使用 OpenGL 并鼓励过渡到 Metal</ListItem>
+                <ListItem textSize="0.65em">使用 OpenGL ES 构建的应用程序将继续在 iOS 12 中运行，但不再推荐使用 OpenGL ES</ListItem>
+                <ListItem textSize="0.65em">2018-06-01: <Link href='https://groups.google.com/a/chromium.org/forum/#!topic/blink-dev/dxqWTSvyhDg'>[blink-dev] Intent to Implement: WebGPU (Google)</Link></ListItem>
+          </List>
+        </Slide>
+
+        <Slide transition={['zoom']} bgColor="secondary">
+          <Heading textSize="1.6em" lineHeight={1} textColor="primary">
+          WebGPU 概要
+          </Heading>
+          <List textColor="gray">
+                <ListItem textSize="0.65em" margin="10px 0px 0px 0px">下一代 Web 的 3D 图形 API 标准</ListItem>
+                <ListItem textSize="0.65em" margin="10px 0px 0px 0px">更低的驱动开销, 更好地支持多线程, 更可预测的性能</ListItem>
+                <ListItem textSize="0.65em" margin="10px 0px 0px 0px">动机</ListItem>
+                <ListItem textSize="0.65em" margin="10px 0px 0px 40px">Web 应用对可编程 3D 图形，图像处理和 GPU 访问需求持续增强</ListItem>
+                <ListItem textSize="0.65em" margin="10px 0px 0px 40px">WebGL 和 WebGL 2 满足这些需求，但与现代本机图形 API 的功能或性能不匹配</ListItem>
+                <ListItem textSize="0.65em" margin="10px 0px 0px 40px">为 Web 引入 "GPU Compute" 功能</ListItem>
+                <ListItem textSize="0.65em" margin="10px 0px 0px 40px">将需要原生功能的应用移植到 WASM，并在 Web 中运用 GPU 加速提升科学计算性能</ListItem>                   
+                <ListItem textSize="0.65em" margin="10px 0px 0px 0px">在所有主流的操作系统上支持 GPU 通用计算</ListItem>
+                <ListItem textSize="0.65em" margin="10px 0px 0px 40px">Vulkan: Windows 7/8, Linux, Chrome OS, Android and Android WebView</ListItem>
+                <ListItem textSize="0.65em" margin="10px 0px 0px 40px">Metal: Mac, iOS</ListItem>
+                <ListItem textSize="0.65em" margin="10px 0px 0px 40px">Direct3D 12: Windows 10</ListItem>             
+                <ListItem textSize="0.65em" margin="10px 0px 0px 0px">由 W3C GPU for the Web 社区组开发</ListItem>
+          </List>
+        </Slide>
+
+       <Slide transition={['zoom']} bgColor="secondary">
+          <Heading textSize="1.6em" lineHeight={1} textColor="primary">
+          W3C GPU for the Web 社区组
+          </Heading>
+          <Layout>
+            <Fill>
+            <List textColor="gray">
+                <ListItem textSize="0.65em" margin="60px 0px 0px 0px">2017-02-10: W3C WebGPU 社区组成立</ListItem>
+                <ListItem textSize="0.65em" margin="10px 0px 0px 0px">2017-03-29: <Link href='https://gpuweb.github.io/admin/cg-charter.html'>GPU for the Web CG 章程</Link></ListItem>
+                <ListItem textSize="0.65em" margin="10px 0px 0px 0px">设计一个新的 Web API，以高效，强大和安全的方式公开这些现代技术</ListItem>
+                <ListItem textSize="0.65em" margin="10px 0px 0px 0px">在拥有现代3D图形和计算功能的原生系统和 Web 平台之间提供接口</ListItem>
+                <ListItem textSize="0.55em" margin="10px 0px 0px 40px">Direct3D 12 (Microsoft)</ListItem>
+                <ListItem textSize="0.55em" margin="10px 0px 0px 40px">Vulkan (Khronos Group)</ListItem>
+                <ListItem textSize="0.55em" margin="10px 0px 0px 40px">Metal (Apple)</ListItem>
+                <ListItem textSize="0.65em" margin="10px 0px 0px 0px">将现代 GPU 中可用的通用计算工具暴露给 Web, 并研究着色器语言以生成跨平台解决方案</ListItem>
+            </List>
+            </Fill>
+            <Fill>
+              <Image src={images.gpucgqr.replace('/', '')} margin="40px auto 0px" height="60vh" />
+            </Fill>
+          </Layout>
+        </Slide>
+
+       <Slide transition={['spin']} bgColor="secondary">
+          <Heading textSize="1.6em" lineHeight={1} textColor="primary">
+          W3C GPU for the Web 社区组
+          </Heading>
+          <Layout>
+            <Fill>
+            <List textColor="gray">
+                <ListItem textSize="0.65em" margin="60px 0px 0px 0px">主席: Dean Jackson (Apple), Corentin Wallez (Google)</ListItem>
+                <ListItem textSize="0.65em" margin="10px 0px 0px 0px">社区组参与者</ListItem>
+                <ListItem textSize="0.55em" margin="10px 0px 0px 40px">Apple, Google, Microsoft, Mozilla</ListItem>
+                <ListItem textSize="0.55em" margin="10px 0px 0px 40px">Intel, AMD, Huawei, Samsung, LG</ListItem>
+                <ListItem textSize="0.55em" margin="10px 0px 0px 40px">Adobe, Autodesk, Yandex, Unity, Netflix </ListItem>
+                <ListItem textSize="0.55em" margin="10px 0px 0px 40px">Alibaba, iQiyi</ListItem>
+                <ListItem textSize="0.55em" margin="10px 0px 0px 40px">...</ListItem>
+                <ListItem textSize="0.65em" margin="10px 0px 0px 0px">邀请浏览器引擎开发人员, GPU 硬件供应商, 3D 软件工程师等的广泛参与</ListItem>
+                <ListItem textSize="0.65em" margin="10px 0px 0px 0px"><Link href='https://drive.google.com/drive/folders/0B6yb23j9HAmDSDNTcWM0a0lxRU0'>WebGPU 每周会议纪要</Link></ListItem>
+                <ListItem textSize="0.65em" margin="10px 0px 0px 0px"><Link href='https://lists.w3.org/Archives/Public/public-gpu/'>邮件列表: public-gpu@w3.org</Link></ListItem>
+            </List>
+            </Fill>
+            <Fill>
+              <Image src={images.gpucgqr.replace('/', '')} margin="40px auto 0px" height="60vh" />
+            </Fill>
+          </Layout>
+        </Slide>
+
+        <Slide transition={['zoom']} bgColor="secondary">
+          <Heading textSize="1.6em" lineHeight={1} textColor="primary">
+          WebGPU 规范, 实现进展
+          </Heading>
+          <List textColor="gray">
+                <ListItem textSize="0.65em" margin="10px 0px 0px 0px">WebIDL 规范: <Link href='https://github.com/gpuweb/gpuweb/blob/master/design/sketch.webidl'>gpuweb/blob/master/design/sketch.webidl</Link></ListItem>
+                <ListItem textSize="0.65em" margin="10px 0px 0px 0px">WebGPU 提案</ListItem>
+                <ListItem textSize="0.65em" margin="10px 0px 0px 40px"><Link href='https://github.com/google/nxt-standalone'>Dawn</Link> (Google)</ListItem>
+                <ListItem textSize="0.65em" margin="10px 0px 0px 40px"><Link href='https://github.com/KhronosGroup/WebGLNext-Proposals/tree/master/Obsidian-Mozilla'>Obsidian</Link> (Mozilla)</ListItem>
+                <ListItem textSize="0.65em" margin="10px 0px 0px 40px"><Link href='https://github.com/gpuweb/proposals/tree/master/WebGPU-Apple'>WebMetal</Link> (Apple)</ListItem>
+                <ListItem textSize="0.65em" margin="10px 0px 0px 0px">WebGPU MVP (Minimum Viable Product) <Link href='https://github.com/gpuweb/gpuweb/wiki/Roadmap'>路线图</Link></ListItem>
+                <ListItem textSize="0.65em" margin="10px 0px 0px 0px">WebGPU 目前正在积极开发中，当前的开发计划</ListItem>
+                <ListItem textSize="0.65em" margin="10px 0px 0px 40px">2019 年初完成 WebGPU 的 MVP (Minimum Viable Product) 版本</ListItem>
+                <ListItem textSize="0.65em" margin="10px 0px 0px 40px">2019 年内完成 WebGPU 1.0 版本的开发</ListItem>
+          </List>
+        </Slide>
+
+        <Slide transition={['zoom']} bgColor="secondary">
+          <Heading textSize="1.6em" lineHeight={1} textColor="primary">
+          近期 Intel 在 WebGL 的工作
+          </Heading>
+          <List textColor="gray">
+                <ListItem textSize="0.65em" margin="10px 0px 0px 0px">在 WebGL 2.0 Compute 中实现 GLES31 的功能</ListItem>
+                <ListItem textSize="0.65em" margin="10px 0px 0px 0px">WEBGL_video_texture 的实现以改进 WebXR 360 video 的性能</ListItem>
+                <ListItem textSize="0.65em" margin="10px 0px 0px 0px">Parallel Shader Compilation 的实现, 达到双线程下 1.4x~1.8x 的性能提升</ListItem>
+                <ListItem textSize="0.65em" margin="10px 0px 0px 0px">移植 WebGL benchmark 到原生应用以测试和改进 WebGL 性能</ListItem>
+                <ListItem textSize="0.65em" margin="10px 0px 0px 0px">...</ListItem>
+          </List>
+        </Slide>
+
+        <Slide transition={['spin']} bgColor="secondary">
+          <Heading textSize="1.6em" lineHeight={1} textColor="primary">
+          近期 Intel 在 WebGPU 的工作
+          </Heading>
+          <List textColor="gray">
+                <ListItem textSize="0.65em" margin="10px 0px 0px 0px">与 Chromium GPU team 紧密合作, 每两周开会讨论 WebGPU 的最新进展</ListItem>
+                <ListItem textSize="0.65em" margin="10px 0px 0px 0px">WebGPU CG 主席 Corentin Wallez 将于明年早些时候到访 Intel Web Team</ListItem>
+                <ListItem textSize="0.65em" margin="10px 0px 0px 0px">WebGPU API 的调研和设计</ListItem>
+                <ListItem textSize="0.65em" margin="10px 0px 0px 0px">基于 Google 维护的开源项目 <Link href='https://dawn.googlesource.com/dawn'>Dawn</Link> 在 Chromium 中实现 WebGPU API</ListItem>
+                <ListItem textSize="0.65em" margin="10px 0px 0px 0px">WebGPU MVP 功能开发</ListItem>
+                <ListItem textSize="0.65em" margin="10px 0px 0px 40px">push constants</ListItem>
+                <ListItem textSize="0.65em" margin="10px 0px 0px 40px">texture view</ListItem>
+                <ListItem textSize="0.65em" margin="10px 0px 0px 40px">render pipeline descriptorization</ListItem>
+                <ListItem textSize="0.65em" margin="10px 0px 0px 40px">MSAA</ListItem>
+                <ListItem textSize="0.65em" margin="10px 0px 0px 40px">......</ListItem>
+          </List>
+        </Slide>
+
+        <Slide transition={['fade']} bgColor="primary" textColor="secondary">
+          <Quote textColor="secondary">
+            谢谢!
+          </Quote>
+        </Slide>
+
+        <Slide transition={['zoom']} bgColor="primary">
+          <Heading size={1} fit lineHeight={1} textColor="secondary">
           Web Neural Network API
           </Heading>
           <Text margin="10px 0 0" textColor="secondary" size={1} bold>
