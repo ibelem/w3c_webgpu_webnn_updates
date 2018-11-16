@@ -137,13 +137,12 @@ export default class Presentation extends React.Component {
           WebGPU 概要
           </Heading>
           <List textColor="gray">
-                <ListItem textSize="0.65em" margin="10px 0px 0px 0px">下一代 Web 的 3D 图形 API 标准</ListItem>
-                <ListItem textSize="0.65em" margin="10px 0px 0px 0px">更低的驱动开销, 更好地支持多线程, 更可预测的性能</ListItem>
                 <ListItem textSize="0.65em" margin="10px 0px 0px 0px">动机</ListItem>
                 <ListItem textSize="0.65em" margin="10px 0px 0px 40px">Web 应用对可编程 3D 图形，图像处理和 GPU 访问需求持续增强</ListItem>
                 <ListItem textSize="0.65em" margin="10px 0px 0px 40px">WebGL 和 WebGL 2 满足这些需求，但与现代本机图形 API 的功能或性能不匹配</ListItem>
-                <ListItem textSize="0.65em" margin="10px 0px 0px 40px">为 Web 引入 "GPU Compute" 功能</ListItem>
-                <ListItem textSize="0.65em" margin="10px 0px 0px 40px">将需要原生功能的应用移植到 WASM，并在 Web 中运用 GPU 加速提升科学计算性能</ListItem>                   
+                <ListItem textSize="0.65em" margin="10px 0px 0px 40px">在 Web 中引入 GPU 加速提升科学计算性能</ListItem>   
+                <ListItem textSize="0.65em" margin="10px 0px 0px 0px">下一代 Web 的 3D 图形 API 标准</ListItem>
+                <ListItem textSize="0.65em" margin="10px 0px 0px 0px">更低的驱动开销, 更好地支持多线程, 更可预测的性能</ListItem>                
                 <ListItem textSize="0.65em" margin="10px 0px 0px 0px">在所有主流的操作系统上支持 GPU 通用计算</ListItem>
                 <ListItem textSize="0.65em" margin="10px 0px 0px 40px">Vulkan: Windows 7/8, Linux, Chrome OS, Android and Android WebView</ListItem>
                 <ListItem textSize="0.65em" margin="10px 0px 0px 40px">Metal: Mac, iOS</ListItem>
@@ -166,7 +165,7 @@ export default class Presentation extends React.Component {
                 <ListItem textSize="0.55em" margin="10px 0px 0px 40px">Direct3D 12 (Microsoft)</ListItem>
                 <ListItem textSize="0.55em" margin="10px 0px 0px 40px">Vulkan (Khronos Group)</ListItem>
                 <ListItem textSize="0.55em" margin="10px 0px 0px 40px">Metal (Apple)</ListItem>
-                <ListItem textSize="0.65em" margin="10px 0px 0px 0px">将现代 GPU 中可用的通用计算工具暴露给 Web, 并研究着色器语言以生成跨平台解决方案</ListItem>
+                <ListItem textSize="0.65em" margin="10px 0px 0px 0px">研究着色器语言以生成跨平台解决方案</ListItem>
             </List>
             </Fill>
             <Fill>
