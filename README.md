@@ -5,6 +5,8 @@
 
 * [W3C WebML 技术进展及社区组状态更新 2018.11.17](https://github.com/ibelem/w3c_webgpu_webnn_updates/blob/master/WebML%20-%20W3C%20Chinese%20Web%20IG%202018.pdf) - Web Neural Network API / Web Machine Learning API
 
+* [在线浏览](https://ibelem.github.io/w3c_webgpu_webnn_updates/build/index.html)
+
 
 ## Scripts
 
