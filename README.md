@@ -7,6 +7,8 @@
 
 * [在线浏览](https://ibelem.github.io/w3c_webgpu_webnn_updates/build/index.html)
 
+# Web Neural Network (WebNN) API
+
 * [Web Neural Network API 演示用例](https://ibelem.github.io/webml-website/examples/)
 
 
